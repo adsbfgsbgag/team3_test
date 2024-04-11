@@ -1,52 +1,5 @@
-/*import React, { useState } from 'react';
-import Main from "../components/section/Main";
-
-function Home() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [invitationCode, setInvitationCode] = useState('');
-
-  // 회원가입 처리 함수
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    // 회원가입 API 호출
-    const response = await fetch('/api/register', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ email, password }),
-    });
-    const data = await response.json();
-    console.log(data);
-    // 회원가입 처리 결과 처리...
-  };
-
-  return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="email"
-        placeholder="이메일"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="비밀번호"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      
-      <button type="submit">회원가입</button>
-    </form>
-  );
-}
-
-export default Home;
-
-
-
 import React, { useState } from 'react';
+import Main from "../components/section/Main";
 import axios from 'axios';
 
 function Register() {
@@ -93,4 +46,4 @@ function Register() {
   );
 }
 
-export default Register;*/
+export default Register;
