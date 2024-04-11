@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import Main from "../components/section/Main";
+import { useNavigate } from 'react-router-dom'; // useHistory 훅을 임포트합니다.
 
 function Login1() {
-  // 로그인 폼의 상태를 관리하는 useState 훅
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // 로그인 상태를 관리합니다.
+  const Navigate = useNavigate(); // useHistory 훅을 사용합니다.
 
-  // 이메일과 비밀번호 입력을 처리하는 핸들러
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
@@ -15,14 +16,22 @@ function Login1() {
     setPassword(e.target.value);
   };
 
-  // 로그인 버튼 클릭 시 실행되는 함수
   const handleSubmit = (e) => {
     e.preventDefault();
-    // 여기서 로그인 로직을 구현합니다.
-    // 예: 백엔드 서버에 로그인 요청을 보내는 코드
     console.log('로그인 시도:', email, password);
-    // 로그인 성공 후 처리 로직
+    // 로그인 성공 로직을 여기에 구현합니다. 
+    // 예제에서는 입력된 이메일과 비밀번호를 검사하지 않고, 직접 로그인 성공으로 가정합니다.
+    
+    // 로그인 성공 상태로 설정
+    setIsLoggedIn(true);
+
+    // 로그인 성공 후 메인 페이지로 리디렉션
+    Navigate('/'); // '/main'은 메인 페이지의 경로로, 실제 경로에 맞게 변경해야 합니다.
   };
+
+  if (isLoggedIn) {
+    return <div>로그인 성공!</div>;
+  }
 
   return (
     <div>

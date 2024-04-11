@@ -150,7 +150,7 @@ app.post('/api/register', async (req, res) => {
 
 
 // 로그인 API
-app.post('/api/login', (req, res) => {
+app.post('/login2', (req, res) => {
   const { user_id, name, email, password, tel, dateJoined, address } = req.body;
 
   const query = 'SELECT * FROM users WHERE email = ?';
